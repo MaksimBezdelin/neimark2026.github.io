@@ -953,40 +953,6 @@
             opacity: 0.8;
         }
 
-        .model-info .specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 6px;
-        }
-
-        .model-info .specs .spec-item {
-            background: #f8fbfa;
-            padding: 14px 18px;
-            border-radius: 12px;
-            border: 1px solid rgba(26, 138, 122, 0.04);
-        }
-
-        .model-info .specs .spec-item .label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #2a3a4e;
-            opacity: 0.4;
-            font-weight: 700;
-        }
-
-        .model-info .specs .spec-item .value {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #0a1a2e;
-            margin-top: 2px;
-        }
-
-        .model-info .specs .spec-item .value .highlight {
-            color: #1a8a7a;
-        }
-
         /* ===== ГАЛЕРЕЯ ===== */
         .gallery-grid {
             display: grid;
@@ -1355,9 +1321,6 @@
             .model-grid {
                 grid-template-columns: 1fr;
             }
-            .model-info .specs {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         @media (max-width: 600px) {
@@ -1410,12 +1373,6 @@
 
             .model-info h2 {
                 font-size: 2rem;
-            }
-            .model-info .specs {
-                grid-template-columns: 1fr;
-            }
-            .model-visual .model-overlay .model-name {
-                font-size: 1.1rem;
             }
 
             .gallery-grid {
@@ -1470,9 +1427,7 @@
         <div class="overlay" id="overlay"></div>
     </nav>
 
-    <!-- ============================================================= -->
     <!-- ===== HERO ===== -->
-    <!-- ============================================================= -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">
@@ -1492,9 +1447,7 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ОБ ОБЪЕКТЕ — КАРУСЕЛЬ + ТЕКСТ ===== -->
-    <!-- ============================================================= -->
     <section class="section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -1541,9 +1494,7 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ИСТОРИЯ — ИНТЕРЕСНЫЕ ФАКТЫ ===== -->
-    <!-- ============================================================= -->
     <section class="history-section" id="history">
         <div class="container">
             <div class="history-intro reveal-up">
@@ -1591,9 +1542,7 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ЦИФРОВАЯ МОДЕЛЬ — 3D VIEWER ===== -->
-    <!-- ============================================================= -->
     <section class="model-section" id="model">
         <div class="container">
             <div class="model-grid">
@@ -1615,33 +1564,12 @@
                     <p class="desc">
                         Трёхмерная модель «пряничного домика» создана для детального изучения архитектуры, визуализации и реставрационных работ.
                     </p>
-
-                    <div class="specs">
-                        <div class="spec-item">
-                            <div class="label">Формат</div>
-                            <div class="value"><span class="highlight">.fbx</span></div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="label">Текстура</div>
-                            <div class="value"><span class="highlight">13.jpg</span></div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="label">Полигональная сетка</div>
-                            <div class="value">Высокая детализация</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="label">Применение</div>
-                            <div class="value">Реставрация · BIM</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ГАЛЕРЕЯ ===== -->
-    <!-- ============================================================= -->
     <section class="section section-alt" id="gallery">
         <div class="container">
             <div class="reveal-up">
@@ -1654,9 +1582,7 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== КОМАНДА ===== -->
-    <!-- ============================================================= -->
     <section class="section" id="team">
         <div class="container">
             <div class="reveal-up">
@@ -1689,9 +1615,7 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ПАРТНЁРЫ ===== -->
-    <!-- ============================================================= -->
     <section class="section section-alt" id="partners">
         <div class="container">
             <div class="reveal-up">
@@ -1746,9 +1670,7 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ЦИТАТА ===== -->
-    <!-- ============================================================= -->
     <section class="section-quote reveal-scale">
         <blockquote>
             Этот «пряничный домик», стоящий в сердце квартала Трёх Святителей, помнит время, когда здесь шумела городская окраина. Он видел смену эпох, пережил пожар и хранит тепло деревянных стен и искусство резчиков.
@@ -1756,9 +1678,7 @@
         <div class="quote-author">— Из истории Нижнего Новгорода</div>
     </section>
 
-    <!-- ============================================================= -->
     <!-- ===== ФУТЕР ===== -->
-    <!-- ============================================================= -->
     <section class="section-footer">
         <div class="footer-text">
             <i class="fas fa-home"></i> «Пряничный домик» · Дом мещан Мироновых — М. А. Антонова · Нижний Новгород
@@ -1772,7 +1692,7 @@
     <!-- ===== СКРИПТЫ ===== -->
     <!-- ============================================================= -->
 
-    <!-- Three.js скрипт с детальным логированием -->
+    <!-- Three.js скрипт с загрузкой текстур -->
     <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -1783,7 +1703,6 @@
         const container = document.getElementById('three-container');
         const loadingEl = document.getElementById('modelLoading');
 
-        // Проверка, что контейнер найден
         if (!container) {
             console.error('❌ Контейнер #three-container не найден!');
         } else {
@@ -1793,12 +1712,10 @@
         // --- 1. СЦЕНА ---
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x0a1a2e);
-        console.log('✅ Сцена создана');
 
         // --- 2. КАМЕРА ---
         const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
         camera.position.set(6, 5, 10);
-        console.log('✅ Камера создана');
 
         // --- 3. РЕНДЕРЕР ---
         const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -1809,7 +1726,6 @@
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.2;
         container.appendChild(renderer.domElement);
-        console.log('✅ Рендерер создан и добавлен в контейнер');
 
         // --- 4. УПРАВЛЕНИЕ ---
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -1820,10 +1736,9 @@
         controls.maxDistance = 25;
         controls.target.set(0, 0.5, 0);
         controls.update();
-        console.log('✅ Орбит-контролы настроены');
 
         // --- 5. ОСВЕЩЕНИЕ ---
-        const ambientLight = new THREE.AmbientLight(0x404060, 0.5);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
         scene.add(ambientLight);
 
         const mainLight = new THREE.DirectionalLight(0xffeedd, 2.5);
@@ -1844,7 +1759,6 @@
         const pointLight = new THREE.PointLight(0x1a8a7a, 0.5, 10);
         pointLight.position.set(0, 3, 0);
         scene.add(pointLight);
-        console.log('✅ Освещение настроено');
 
         // --- 6. ПОЛ ДЛЯ ТЕНЕЙ ---
         const floorGeo = new THREE.PlaneGeometry(8, 8);
@@ -1854,15 +1768,57 @@
         floor.position.y = -1.2;
         floor.receiveShadow = true;
         scene.add(floor);
-        console.log('✅ Пол добавлен');
 
-        // --- 7. ЗАГРУЗКА FBX ---
+        // --- 7. ЗАГРУЗКА ТЕКСТУРЫ ---
+        const textureLoader = new THREE.TextureLoader();
+        let textureLoaded = false;
+        let textureMap = null;
+
+        console.log('📁 Начинаем загрузку текстуры 13.jpg...');
+        textureLoader.load(
+            '13.jpg',
+            (texture) => {
+                textureMap = texture;
+                textureLoaded = true;
+                console.log('✅ Текстура 13.jpg загружена');
+
+                // Если модель уже загружена, применяем текстуру
+                if (modelLoaded) {
+                    applyTextureToModel(modelObject);
+                }
+            },
+            undefined,
+            (error) => {
+                console.warn('⚠️ Не удалось загрузить текстуру 13.jpg:', error);
+            }
+        );
+
+        // --- 8. ЗАГРУЗКА FBX ---
         console.log('📁 Начинаем загрузку файла 1.fbx...');
-        console.log('📁 Текущий путь:', window.location.href);
 
         const loader = new FBXLoader();
-        let modelLoaded = false;
         let loadError = false;
+        let modelLoaded = false;
+        let modelObject = null;
+
+        function applyTextureToModel(model) {
+            if (!model || !textureMap) return;
+
+            model.traverse((child) => {
+                if (child.isMesh) {
+                    if (child.material) {
+                        const materials = Array.isArray(child.material) ? child.material : [child.material];
+                        materials.forEach(mat => {
+                            mat.map = textureMap;
+                            mat.needsUpdate = true;
+                            mat.color.set(0xffffff);
+                            mat.emissive.set(0x000000);
+                        });
+                    }
+                }
+            });
+            console.log('✅ Текстура применена к модели');
+        }
 
         function showError(message, details) {
             loadError = true;
@@ -1878,17 +1834,16 @@
             }
         }
 
-        // Пробуем загрузить
         loader.load(
             '1.fbx',
             (fbx) => {
-                console.log('✅ FBX загружен! Объект:', fbx);
+                console.log('✅ FBX загружен!');
+                modelObject = fbx;
 
                 // --- МАСШТАБИРОВАНИЕ ---
                 const box = new THREE.Box3().setFromObject(fbx);
                 const size = box.getSize(new THREE.Vector3());
                 const maxDim = Math.max(size.x, size.y, size.z);
-                console.log('📐 Размеры модели:', size.x, size.y, size.z, 'максимум:', maxDim);
 
                 if (maxDim > 0.01) {
                     const scale = 4 / maxDim;
@@ -1896,27 +1851,29 @@
                     const center = box.getCenter(new THREE.Vector3());
                     fbx.position.sub(center.multiplyScalar(scale));
                     fbx.position.y += 0.5;
-                    console.log('📐 Масштабирование применено, коэффициент:', scale);
                 }
 
                 // --- НАСТРОЙКА МАТЕРИАЛОВ ---
-                let meshCount = 0;
                 fbx.traverse((child) => {
                     if (child.isMesh) {
-                        meshCount++;
                         child.castShadow = true;
                         child.receiveShadow = true;
                         if (child.material) {
                             const materials = Array.isArray(child.material) ? child.material : [child.material];
                             materials.forEach(mat => {
                                 mat.envMapIntensity = 0.6;
-                                mat.roughness = 0.7;
-                                mat.metalness = 0.1;
+                                mat.roughness = 0.5;
+                                mat.metalness = 0.0;
+                                mat.color.set(0xffffff);
                             });
                         }
                     }
                 });
-                console.log(`✅ Найдено ${meshCount} мешей, материалы настроены`);
+
+                // Применяем текстуру, если она уже загружена
+                if (textureLoaded && textureMap) {
+                    applyTextureToModel(fbx);
+                }
 
                 scene.add(fbx);
                 modelLoaded = true;
@@ -1950,32 +1907,30 @@
                     const percent = Math.round((progress.loaded / progress.total) * 100);
                     const span = loadingEl.querySelector('span');
                     if (span) span.textContent = `Загрузка модели... ${percent}%`;
-                    console.log(`📊 Прогресс загрузки: ${percent}%`);
                 }
             },
             (error) => {
                 console.error('❌ ОШИБКА ЗАГРУЗКИ FBX:');
                 console.error('  - Тип ошибки:', error.type || 'неизвестный');
                 console.error('  - Сообщение:', error.message || 'нет сообщения');
-                console.error('  - Полный объект ошибки:', error);
 
-                // Показываем детальную ошибку
                 let errorMessage = 'Не удалось загрузить 3D-модель';
                 let errorDetails = '';
 
-                if (error.message) {
+                if (window.location.protocol === 'file:') {
+                    errorDetails = 'Вы открыли страницу через file://. Запустите локальный сервер!';
+                    errorMessage = '⚠️ Требуется локальный сервер';
+                } else if (error.message) {
                     errorDetails = error.message;
-                } else if (error.type === 'NetworkError') {
-                    errorDetails = 'Сетевая ошибка — возможно, файл недоступен или заблокирован CORS';
                 } else {
-                    errorDetails = 'Файл 1.fbx не найден или повреждён. Проверьте:\n- имя файла (регистр букв!)\n- расширение .fbx\n- что файл в той же папке';
+                    errorDetails = 'Файл 1.fbx не найден или повреждён';
                 }
 
                 showError(errorMessage, errorDetails);
             }
         );
 
-        // --- 8. АДАПТАЦИЯ РАЗМЕРА ---
+        // --- 9. АДАПТАЦИЯ РАЗМЕРА ---
         function resizeRenderer() {
             const width = container.clientWidth;
             const height = container.clientHeight;
@@ -1988,7 +1943,7 @@
 
         window.addEventListener('resize', resizeRenderer);
 
-        // --- 9. АНИМАЦИЯ ---
+        // --- 10. АНИМАЦИЯ ---
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
@@ -1996,16 +1951,15 @@
         }
         animate();
 
-        // --- 10. ПОВТОРНАЯ ПРОВЕРКА РАЗМЕРА ---
         setTimeout(resizeRenderer, 100);
 
-        console.log('🚀 Three.js инициализирован, ждём загрузку модели...');
+        console.log('🚀 Three.js инициализирован');
     </script>
 
     <!-- Остальные скрипты -->
     <script>
         // =============================================================
-        // 1. КАРУСЕЛЬ
+        // 1. КАРУСЕЛЬ (с учётом .JPG для 5-9)
         // =============================================================
         (function() {
             const slidesContainer = document.getElementById('aboutCarouselSlides');
@@ -2018,8 +1972,15 @@
             for (let i = 1; i <= totalSlides; i++) {
                 const slide = document.createElement('div');
                 slide.className = 'about-carousel-slide';
+
+                // Файлы 5-9 имеют расширение .JPG (заглавные)
+                let ext = '.jpg';
+                if (i >= 5 && i <= 9) {
+                    ext = '.JPG';
+                }
+
                 slide.innerHTML = `
-                            <img src="${i}.jpg" alt="Пряничный домик — фото ${i}" loading="lazy" />
+                            <img src="${i}${ext}" alt="Пряничный домик — фото ${i}" loading="lazy" />
                             <span class="slide-number">${i} / ${totalSlides}</span>
                         `;
                 slidesContainer.appendChild(slide);
@@ -2080,7 +2041,7 @@
         })();
 
         // =============================================================
-        // 2. ГАЛЕРЕЯ
+        // 2. ГАЛЕРЕЯ (с учётом .JPG для 5-9)
         // =============================================================
         (function() {
             const galleryGrid = document.getElementById('galleryGrid');
@@ -2102,8 +2063,15 @@
                 const item = document.createElement('div');
                 item.className = 'gallery-item reveal-scale';
                 item.style.transitionDelay = ((i - 1) * 0.05) + 's';
+
+                // Файлы 5-9 имеют расширение .JPG (заглавные)
+                let ext = '.jpg';
+                if (i >= 5 && i <= 9) {
+                    ext = '.JPG';
+                }
+
                 item.innerHTML = `
-                            <img src="${i}.jpg" alt="Пряничный домик — ${titles[i-1]}" loading="lazy" />
+                            <img src="${i}${ext}" alt="Пряничный домик — ${titles[i-1]}" loading="lazy" />
                             <div class="gallery-overlay">
                                 <span>${titles[i-1]}</span>
                             </div>
