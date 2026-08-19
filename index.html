@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Дом мещан Мироновых — М. А. Антонова · Нижний Новгород</title>
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-    <!-- Three.js -->
     <script type="importmap">
         {
             "imports": {
@@ -18,19 +14,15 @@
             }
         }
     </script>
-
     <style>
-        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: #ffffff;
@@ -38,7 +30,6 @@
             overflow-x: hidden;
             padding-top: 80px;
         }
-
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -49,8 +40,6 @@
             background: #1a8a7a;
             border-radius: 10px;
         }
-
-        /* ===== ВЕРХНЯЯ ПЛАШКА ===== */
         .navbar {
             position: fixed;
             top: 0;
@@ -67,11 +56,9 @@
             transition: box-shadow 0.3s ease;
             height: 80px;
         }
-
         .navbar.scrolled {
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
         }
-
         .navbar .logo {
             display: flex;
             align-items: center;
@@ -85,7 +72,6 @@
             flex-shrink: 0;
             max-width: 320px;
         }
-
         .navbar .logo .logo-icon {
             width: 44px;
             height: 44px;
@@ -97,24 +83,20 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
         .navbar .logo .logo-icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             display: block;
         }
-
         .navbar .logo .logo-text {
             font-size: 1rem;
             letter-spacing: -0.5px;
             white-space: nowrap;
         }
-
         .navbar .logo .logo-text span {
             color: #1a8a7a;
         }
-
         .navbar .nav-links {
             display: flex;
             gap: 4px;
@@ -122,7 +104,6 @@
             align-items: center;
             flex-wrap: wrap;
         }
-
         .navbar .nav-links li a {
             display: inline-block;
             padding: 8px 16px;
@@ -135,17 +116,14 @@
             letter-spacing: 0.3px;
             white-space: nowrap;
         }
-
         .navbar .nav-links li a:hover {
             background: rgba(26, 138, 122, 0.08);
             color: #1a8a7a;
         }
-
         .navbar .nav-links li a.active {
             background: #1a8a7a;
             color: #ffffff;
         }
-
         .navbar .burger {
             display: none;
             flex-direction: column;
@@ -155,7 +133,6 @@
             background: none;
             border: none;
         }
-
         .navbar .burger span {
             display: block;
             width: 28px;
@@ -164,7 +141,6 @@
             border-radius: 4px;
             transition: all 0.3s ease;
         }
-
         .navbar .burger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 6px);
         }
@@ -174,7 +150,6 @@
         .navbar .burger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -6px);
         }
-
         .navbar .overlay {
             display: none;
             position: fixed;
@@ -182,12 +157,9 @@
             background: rgba(0, 0, 0, 0.2);
             z-index: 999;
         }
-
         .navbar .overlay.show {
             display: block;
         }
-
-        /* ===== ГЛОБАЛЬНЫЕ АНИМАЦИИ ===== */
         .reveal-up {
             opacity: 0;
             transform: translateY(60px);
@@ -197,7 +169,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
         .reveal-left {
             opacity: 0;
             transform: translateX(-80px);
@@ -207,7 +178,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-
         .reveal-right {
             opacity: 0;
             transform: translateX(80px);
@@ -217,7 +187,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-
         .reveal-scale {
             opacity: 0;
             transform: scale(0.85) rotate(-2deg);
@@ -227,8 +196,6 @@
             opacity: 1;
             transform: scale(1) rotate(0deg);
         }
-
-        /* ===== HERO ===== */
         .hero {
             min-height: calc(100vh - 80px);
             display: flex;
@@ -240,23 +207,18 @@
             background: #ffffff;
             padding: 40px 20px;
         }
-
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(26, 138, 122, 0.04) 0%, transparent 60%),
-                radial-gradient(circle at 80% 70%, rgba(26, 138, 122, 0.03) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 30%, rgba(26, 138, 122, 0.04) 0%, transparent 60%), radial-gradient(circle at 80% 70%, rgba(26, 138, 122, 0.03) 0%, transparent 50%);
             z-index: 0;
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
             padding: 20px;
         }
-
         .hero-badge {
             display: inline-block;
             background: rgba(10, 26, 46, 0.06);
@@ -271,7 +233,6 @@
             margin-bottom: 25px;
             animation: fadeInDown 1.2s ease-out;
         }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.8rem, 10vw, 6rem);
@@ -282,15 +243,12 @@
             margin-bottom: 10px;
             animation: fadeInUp 1.2s ease-out;
         }
-
         .hero h1 .highlight {
             color: #1a8a7a;
         }
-
         .hero h1 .nowrap {
             white-space: nowrap;
         }
-
         .hero .address {
             font-size: clamp(1rem, 2vw, 1.6rem);
             font-weight: 300;
@@ -299,12 +257,10 @@
             opacity: 0.7;
             animation: fadeInUp 1.4s ease-out;
         }
-
         .hero .address i {
             color: #1a8a7a;
             margin: 0 12px;
         }
-
         .hero .sub-address {
             font-size: 1rem;
             color: #0a1a2e;
@@ -313,7 +269,6 @@
             letter-spacing: 2px;
             animation: fadeInUp 1.6s ease-out;
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -324,7 +279,6 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -335,7 +289,6 @@
                 transform: translateY(0);
             }
         }
-
         .scroll-indicator {
             position: absolute;
             bottom: 40px;
@@ -348,7 +301,6 @@
             cursor: pointer;
             opacity: 0.5;
         }
-
         @keyframes bounce {
             0%,
             100% {
@@ -358,17 +310,13 @@
                 transform: translateX(-50%) translateY(-15px);
             }
         }
-
-        /* ===== СЕКЦИИ ===== */
         .section {
             padding: 80px 20px 100px;
             background: #ffffff;
         }
-
         .section-alt {
             background: #f8fbfa;
         }
-
         .section-title {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -377,11 +325,9 @@
             text-align: center;
             margin-bottom: 15px;
         }
-
         .section-title span {
             color: #1a8a7a;
         }
-
         .section-subtitle {
             text-align: center;
             color: #2a3a4e;
@@ -392,20 +338,16 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .container {
             max-width: 1300px;
             margin: 0 auto;
         }
-
-        /* ===== ОБ ОБЪЕКТЕ — КАРУСЕЛЬ + ТЕКСТ ===== */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
-
         @media (max-width: 992px) {
             .about-grid {
                 grid-template-columns: 1fr;
@@ -413,7 +355,6 @@
                 align-items: stretch;
             }
         }
-
         .about-carousel-wrapper {
             position: relative;
             border-radius: 20px;
@@ -423,7 +364,6 @@
             width: 100%;
             aspect-ratio: 4/3;
         }
-
         .about-carousel-wrapper::after {
             content: '';
             position: absolute;
@@ -433,14 +373,12 @@
             pointer-events: none;
             z-index: 2;
         }
-
         .about-carousel-slides {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform;
             height: 100%;
         }
-
         .about-carousel-slide {
             min-width: 100%;
             display: flex;
@@ -450,7 +388,6 @@
             background: #e8f2ef;
             position: relative;
         }
-
         .about-carousel-slide img {
             width: 100%;
             height: 100%;
@@ -458,11 +395,9 @@
             display: block;
             transition: transform 0.6s ease;
         }
-
         .about-carousel-slide:hover img {
             transform: scale(1.02);
         }
-
         .about-carousel-slide .slide-number {
             position: absolute;
             bottom: 20px;
@@ -477,14 +412,12 @@
             letter-spacing: 1px;
             z-index: 5;
         }
-
         .about-carousel-dots {
             display: flex;
             justify-content: center;
             gap: 8px;
             padding: 16px 0 8px;
         }
-
         .about-carousel-dots .dot {
             width: 10px;
             height: 10px;
@@ -495,18 +428,15 @@
             transition: all 0.4s ease;
             position: relative;
         }
-
         .about-carousel-dots .dot.active {
             background: #1a8a7a;
             transform: scale(1.3);
             box-shadow: 0 0 20px rgba(26, 138, 122, 0.3);
         }
-
         .about-carousel-dots .dot:hover {
             background: #1a8a7a;
             opacity: 0.7;
         }
-
         .about-carousel-arrows {
             position: absolute;
             top: 50%;
@@ -518,7 +448,6 @@
             pointer-events: none;
             z-index: 10;
         }
-
         .about-carousel-arrows button {
             pointer-events: auto;
             width: 38px;
@@ -533,14 +462,11 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
-
         .about-carousel-arrows button:hover {
             background: #ffffff;
             transform: scale(1.08);
             box-shadow: 0 8px 30px rgba(26, 138, 122, 0.12);
         }
-
-        /* ===== ТЕКСТОВЫЙ БЛОК ===== */
         .about-text {
             padding: 5px 0;
             display: flex;
@@ -548,7 +474,6 @@
             justify-content: center;
             height: 100%;
         }
-
         .about-text .badge {
             display: inline-block;
             background: rgba(26, 138, 122, 0.1);
@@ -562,7 +487,6 @@
             margin-bottom: 10px;
             align-self: flex-start;
         }
-
         .about-text h2 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -572,11 +496,9 @@
             margin-bottom: 4px;
             line-height: 1.1;
         }
-
         .about-text h2 span {
             color: #1a8a7a;
         }
-
         .about-text .subtitle {
             font-size: 0.95rem;
             color: #2a3a4e;
@@ -585,18 +507,15 @@
             margin-bottom: 14px;
             font-style: italic;
         }
-
         .about-text .main-text {
             font-size: 0.95rem;
             line-height: 1.9;
             color: #1a2a3e;
             margin-bottom: 10px;
         }
-
         .about-text .main-text strong {
             color: #0a1a2e;
         }
-
         .about-text .divider {
             width: 40px;
             height: 2px;
@@ -605,7 +524,6 @@
             border-radius: 4px;
             opacity: 0.3;
         }
-
         .about-text .quote-block {
             background: #f0f7f5;
             border-left: 4px solid #1a8a7a;
@@ -613,7 +531,6 @@
             border-radius: 0 10px 10px 0;
             margin: 10px 0 14px;
         }
-
         .about-text .quote-block p {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -622,7 +539,6 @@
             color: #0a1a2e;
             opacity: 0.85;
         }
-
         .about-text .quote-block .source {
             font-family: 'Inter', sans-serif;
             font-style: normal;
@@ -633,20 +549,14 @@
             margin-top: 4px;
             letter-spacing: 1px;
         }
-
         .about-text .quote-block.orange {
             border-left-color: #e8731a;
         }
-
-        /* ============================================================= */
-        /* ===== ИСТОРИЯ — ИНТЕРЕСНЫЕ ФАКТЫ ===== */
-        /* ============================================================= */
         .history-section {
             padding: 80px 20px 100px;
             background: #f8fbfa;
             position: relative;
         }
-
         .history-section .history-intro {
             text-align: center;
             max-width: 600px;
@@ -654,7 +564,6 @@
             position: relative;
             z-index: 1;
         }
-
         .history-section .history-intro h2 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -662,18 +571,15 @@
             color: #0a1a2e;
             margin-bottom: 10px;
         }
-
         .history-section .history-intro h2 span {
             color: #1a8a7a;
         }
-
         .history-section .history-intro p {
             font-size: 1.1rem;
             color: #2a3a4e;
             opacity: 0.6;
             font-weight: 400;
         }
-
         .history-facts {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -683,14 +589,12 @@
             position: relative;
             z-index: 1;
         }
-
         @media (max-width: 768px) {
             .history-facts {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
         }
-
         .history-fact {
             background: #ffffff;
             border-radius: 20px;
@@ -703,7 +607,6 @@
             display: flex;
             flex-direction: column;
         }
-
         .history-fact::before {
             content: '';
             position: absolute;
@@ -715,23 +618,19 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-
         .history-fact:hover::before {
             opacity: 1;
         }
-
         .history-fact:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 50px rgba(26, 138, 122, 0.08);
             border-color: rgba(26, 138, 122, 0.12);
         }
-
         .history-fact .fact-icon {
             font-size: 2.4rem;
             margin-bottom: 12px;
             display: block;
         }
-
         .history-fact .fact-title {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -740,26 +639,21 @@
             color: #0a1a2e;
             margin-bottom: 6px;
         }
-
         .history-fact .fact-title .highlight {
             color: #1a8a7a;
         }
-
         .history-fact .fact-title .fire {
             color: #e8731a;
         }
-
         .history-fact .fact-title .secret {
             color: #7b3f9e;
         }
-
         .history-fact p {
             font-size: 0.95rem;
             line-height: 1.8;
             color: #2a3a4e;
             opacity: 0.8;
         }
-
         .history-fact .fact-tag {
             display: inline-block;
             font-size: 0.6rem;
@@ -773,25 +667,18 @@
             color: #1a8a7a;
             align-self: flex-start;
         }
-
         .history-fact .fact-tag.fire-tag {
             background: rgba(232, 115, 26, 0.1);
             color: #e8731a;
         }
-
         .history-fact .fact-tag.secret-tag {
             background: rgba(123, 63, 158, 0.1);
             color: #7b3f9e;
         }
-
-        /* ============================================================= */
-        /* ===== ЦИФРОВАЯ МОДЕЛЬ — 3D VIEWER ===== */
-        /* ============================================================= */
         .model-section {
             padding: 80px 20px 100px;
             background: #ffffff;
         }
-
         .model-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -800,14 +687,12 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         @media (max-width: 992px) {
             .model-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
         }
-
         .model-visual {
             border-radius: 20px;
             overflow: hidden;
@@ -821,13 +706,11 @@
             box-shadow: 0 20px 60px rgba(26, 138, 122, 0.08);
             min-height: 400px;
         }
-
         .model-visual #three-container {
             width: 100%;
             height: 100%;
             display: block;
         }
-
         .model-visual .model-overlay {
             position: absolute;
             bottom: 0;
@@ -838,20 +721,17 @@
             color: #ffffff;
             pointer-events: none;
         }
-
         .model-visual .model-overlay .model-name {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1.4rem;
             font-weight: 700;
         }
-
         .model-visual .model-overlay .model-detail {
             font-size: 0.85rem;
             opacity: 0.7;
             margin-top: 2px;
         }
-
         .model-visual .model-loading {
             position: absolute;
             top: 50%;
@@ -870,7 +750,6 @@
             z-index: 5;
             pointer-events: none;
         }
-
         .model-visual .model-loading .spinner {
             width: 40px;
             height: 40px;
@@ -879,11 +758,11 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
-
         .model-visual .model-error {
             position: absolute;
             top: 50%;
@@ -901,26 +780,22 @@
             border: 1px solid rgba(232, 115, 26, 0.2);
             max-width: 90%;
         }
-
         .model-visual .model-error i {
             font-size: 2rem;
             display: block;
             margin-bottom: 10px;
         }
-
         .model-visual .model-error .error-hint {
             font-size: 0.75rem;
             opacity: 0.6;
             margin-top: 8px;
             color: #ccc;
         }
-
         .model-info {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
         .model-info .badge {
             display: inline-block;
             background: rgba(26, 138, 122, 0.1);
@@ -933,7 +808,6 @@
             border-radius: 50px;
             align-self: flex-start;
         }
-
         .model-info h2 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -941,37 +815,30 @@
             font-weight: 700;
             color: #0a1a2e;
         }
-
         .model-info h2 span {
             color: #1a8a7a;
         }
-
         .model-info .desc {
             font-size: 1rem;
             line-height: 1.8;
             color: #2a3a4e;
             opacity: 0.8;
         }
-
-        /* ===== ГАЛЕРЕЯ ===== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
-
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
         @media (max-width: 480px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
         }
-
         .gallery-item {
             border-radius: 16px;
             overflow: hidden;
@@ -982,7 +849,6 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(26, 138, 122, 0.04);
         }
-
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -990,16 +856,13 @@
             display: block;
             transition: transform 0.6s ease;
         }
-
         .gallery-item:hover img {
             transform: scale(1.05);
         }
-
         .gallery-item:hover {
             box-shadow: 0 8px 40px rgba(26, 138, 122, 0.12);
             border-color: rgba(26, 138, 122, 0.15);
         }
-
         .gallery-item .gallery-overlay {
             position: absolute;
             bottom: 0;
@@ -1011,37 +874,30 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
-
         .gallery-item .gallery-overlay span {
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 1px;
             opacity: 0.8;
         }
-
-        /* ===== КОМАНДА ===== */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-
         @media (max-width: 768px) {
             .team-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
         @media (max-width: 480px) {
             .team-grid {
                 grid-template-columns: 1fr;
             }
         }
-
         .team-card {
             text-align: center;
             padding: 30px 20px;
@@ -1051,12 +907,10 @@
             transition: 0.4s ease;
             border: 1px solid rgba(26, 138, 122, 0.05);
         }
-
         .team-card:hover {
             box-shadow: 0 8px 40px rgba(26, 138, 122, 0.08);
             transform: translateY(-6px);
         }
-
         .team-card .avatar {
             width: 80px;
             height: 80px;
@@ -1070,20 +924,17 @@
             color: #1a8a7a;
             opacity: 0.4;
         }
-
         .team-card h4 {
             font-size: 1rem;
             font-weight: 700;
             color: #0a1a2e;
         }
-
         .team-card .team-role {
             font-size: 0.85rem;
             color: #2a3a4e;
             opacity: 0.6;
             margin-top: 4px;
         }
-
         .team-card .team-badge {
             display: inline-block;
             margin-top: 10px;
@@ -1096,29 +947,24 @@
             background: rgba(26, 138, 122, 0.08);
             color: #1a8a7a;
         }
-
-        /* ===== ПАРТНЁРЫ ===== */
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             align-items: center;
         }
-
         @media (max-width: 992px) {
             .partners-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
         }
-
         @media (max-width: 600px) {
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
         }
-
         .partner-item {
             background: #ffffff;
             border-radius: 16px;
@@ -1133,13 +979,11 @@
             justify-content: center;
             min-height: 130px;
         }
-
         .partner-item:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 40px rgba(26, 138, 122, 0.08);
             border-color: rgba(26, 138, 122, 0.2);
         }
-
         .partner-item .partner-logo-img {
             width: 100%;
             max-width: 160px;
@@ -1148,7 +992,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .partner-item .partner-logo-img img {
             max-width: 100%;
             max-height: 100%;
@@ -1158,18 +1001,15 @@
             object-fit: contain;
             transition: all 0.3s ease;
         }
-
         .partner-item:hover .partner-logo-img img {
             transform: scale(1.03);
         }
-
         .section-quote {
             padding: 80px 20px;
             background: #ffffff;
             text-align: center;
             position: relative;
         }
-
         .section-quote::before {
             content: '';
             position: absolute;
@@ -1177,7 +1017,6 @@
             background: radial-gradient(circle at 50% 30%, rgba(26, 138, 122, 0.03), transparent 70%);
             pointer-events: none;
         }
-
         .section-quote blockquote {
             max-width: 800px;
             margin: 0 auto;
@@ -1190,7 +1029,6 @@
             position: relative;
             z-index: 1;
         }
-
         .section-quote blockquote::before {
             content: '"';
             font-size: 4rem;
@@ -1200,7 +1038,6 @@
             margin-bottom: -20px;
             font-family: 'Playfair Display', serif;
         }
-
         .section-quote .quote-author {
             margin-top: 20px;
             font-size: 0.8rem;
@@ -1212,24 +1049,20 @@
             position: relative;
             z-index: 1;
         }
-
         .section-footer {
             padding: 50px 20px 40px;
             background: #0a1a2e;
             text-align: center;
         }
-
         .section-footer .footer-text {
             color: #8fcbc0;
             font-size: 0.9rem;
             opacity: 0.6;
             letter-spacing: 2px;
         }
-
         .section-footer .footer-text i {
             color: #e8731a;
         }
-
         .section-footer .footer-copy {
             color: #4a6a6e;
             font-size: 0.75rem;
@@ -1237,31 +1070,24 @@
             margin-top: 15px;
             opacity: 0.4;
         }
-
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 992px) {
             body {
                 padding-top: 70px;
             }
-
             .navbar {
                 padding: 8px 16px;
                 height: 70px;
             }
-
             .navbar .logo .logo-icon {
                 width: 36px;
                 height: 36px;
             }
-
             .navbar .logo .logo-text {
                 font-size: 0.85rem;
             }
-
             .navbar .logo {
                 max-width: 280px;
             }
-
             .navbar .nav-links {
                 position: fixed;
                 top: 0;
@@ -1276,30 +1102,25 @@
                 transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
                 align-items: stretch;
             }
-
             .navbar .nav-links.open {
                 right: 0;
             }
-
             .navbar .nav-links li a {
                 padding: 12px 20px;
                 font-size: 0.95rem;
                 border-radius: 12px;
                 text-align: center;
             }
-
             .navbar .burger {
                 display: flex;
                 z-index: 1001;
             }
-
             .section {
                 padding: 50px 20px 60px;
             }
             .section-title {
                 font-size: 2.2rem;
             }
-
             .about-text h2 {
                 font-size: 2rem;
             }
@@ -1322,28 +1143,23 @@
                 grid-template-columns: 1fr;
             }
         }
-
         @media (max-width: 600px) {
             .navbar {
                 padding: 6px 12px;
                 height: 60px;
             }
-
             .navbar .logo .logo-icon {
                 width: 30px;
                 height: 30px;
                 border-radius: 8px;
             }
-
             .navbar .logo .logo-text {
                 font-size: 0.7rem;
             }
-
             .navbar .logo {
                 gap: 8px;
                 max-width: 200px;
             }
-
             .about-text h2 {
                 font-size: 1.6rem;
             }
@@ -1356,7 +1172,6 @@
             .about-text .subtitle {
                 font-size: 0.85rem;
             }
-
             .history-facts {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -1370,16 +1185,13 @@
             .history-fact p {
                 font-size: 0.85rem;
             }
-
             .model-info h2 {
                 font-size: 2rem;
             }
-
             .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -1392,7 +1204,6 @@
                 max-width: 100px;
                 height: 50px;
             }
-
             .team-grid {
                 grid-template-columns: 1fr;
             }
@@ -1400,8 +1211,6 @@
     </style>
 </head>
 <body>
-
-    <!-- ===== ВЕРХНЯЯ ПЛАШКА ===== -->
     <nav class="navbar" id="navbar">
         <a href="#home" class="logo">
             <span class="logo-icon">
@@ -1409,7 +1218,6 @@
             </span>
             <span class="logo-text">Дом мещан <span>Мироновых</span></span>
         </a>
-
         <ul class="nav-links" id="navLinks">
             <li><a href="#about" class="active">Об объекте</a></li>
             <li><a href="#history">История объекта</a></li>
@@ -1418,7 +1226,6 @@
             <li><a href="#team">Команда</a></li>
             <li><a href="#partners">Партнёры</a></li>
         </ul>
-
         <button class="burger" id="burger" aria-label="Меню">
             <span></span>
             <span></span>
@@ -1427,7 +1234,6 @@
         <div class="overlay" id="overlay"></div>
     </nav>
 
-    <!-- ===== HERO ===== -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">
@@ -1447,42 +1253,33 @@
         </div>
     </section>
 
-    <!-- ===== ОБ ОБЪЕКТЕ — КАРУСЕЛЬ + ТЕКСТ ===== -->
     <section class="section" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-carousel-wrapper reveal-left">
-                    <div class="about-carousel-slides" id="aboutCarouselSlides">
-                    </div>
+                    <div class="about-carousel-slides" id="aboutCarouselSlides"></div>
                     <div class="about-carousel-arrows">
                         <button id="aboutPrevBtn" aria-label="Назад"><i class="fas fa-chevron-left"></i></button>
                         <button id="aboutNextBtn" aria-label="Вперед"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="about-carousel-dots" id="aboutCarouselDots"></div>
                 </div>
-
                 <div class="about-text reveal-right">
                     <span class="badge"><i class="fas fa-landmark" style="margin-right: 6px;"></i> Объект культурного наследия</span>
-
                     <h2><span>«Пряничный домик»</span> Нижнего</h2>
                     <p class="subtitle">Памятник градостроительства и архитектуры в историческом центре</p>
-
                     <div class="divider"></div>
-
                     <p class="main-text">
                         Построен во второй половине XIX века. Значительно перестроен в начале XX века, не позже 1910 года. Автор проекта не установлен.
                     </p>
-
                     <p class="main-text">
                         За обилие изящных завитков на деревянном фасаде градозащитники прозвали его <strong>«пряничным домиком»</strong> — одним из самых нарядных зданий в квартале.
                     </p>
-
                     <div class="quote-block">
                         <p>
                             Первый владелец — мещанин <strong>Фёдор Воронков</strong>. Затем усадьба перешла к <strong>Марье Мироновой</strong>, а в 1890 году — к <strong>Михаилу Антонову</strong>, который и придал дому его нынешний облик.
                         </p>
                     </div>
-
                     <div class="quote-block orange">
                         <p>
                             В 2020 году дом признан объектом культурного наследия регионального значения. Реставрация оценивается более чем в <strong>40 млн рублей</strong>.
@@ -1494,14 +1291,12 @@
         </div>
     </section>
 
-    <!-- ===== ИСТОРИЯ — ИНТЕРЕСНЫЕ ФАКТЫ ===== -->
     <section class="history-section" id="history">
         <div class="container">
             <div class="history-intro reveal-up">
                 <h2>История <span>в фактах</span></h2>
                 <p>Почему «пряничный домик» и другие тайны</p>
             </div>
-
             <div class="history-facts">
                 <div class="history-fact reveal-scale">
                     <span class="fact-icon">🏠</span>
@@ -1511,7 +1306,6 @@
                     </p>
                     <span class="fact-tag">Народное прозвище</span>
                 </div>
-
                 <div class="history-fact reveal-scale" style="transition-delay: 0.1s;">
                     <span class="fact-icon">👤</span>
                     <div class="fact-title">Кто его <span class="highlight">построил</span>?</div>
@@ -1520,7 +1314,6 @@
                     </p>
                     <span class="fact-tag">Смена владельцев</span>
                 </div>
-
                 <div class="history-fact reveal-scale" style="transition-delay: 0.2s;">
                     <span class="fact-icon">🔥</span>
                     <div class="fact-title">Тайна <span class="fire">старого пожара</span></div>
@@ -1529,7 +1322,6 @@
                     </p>
                     <span class="fact-tag fire-tag">Скрытая история</span>
                 </div>
-
                 <div class="history-fact reveal-scale" style="transition-delay: 0.3s;">
                     <span class="fact-icon">🏛️</span>
                     <div class="fact-title">Статус <span class="highlight">ОКН</span></div>
@@ -1542,7 +1334,6 @@
         </div>
     </section>
 
-    <!-- ===== ЦИФРОВАЯ МОДЕЛЬ — 3D VIEWER ===== -->
     <section class="model-section" id="model">
         <div class="container">
             <div class="model-grid">
@@ -1553,11 +1344,10 @@
                         <span>Загрузка модели...</span>
                     </div>
                     <div class="model-overlay">
-                        <div class="model-name">1.fbx</div>
+                        <div class="model-name">Цифровая модель пряничного домика</div>
                         <div class="model-detail">Текстурная карта · 13.jpg</div>
                     </div>
                 </div>
-
                 <div class="model-info reveal-right">
                     <span class="badge"><i class="fas fa-cube" style="margin-right: 6px;"></i> 3D-модель</span>
                     <h2>Цифровой <span>двойник</span></h2>
@@ -1569,20 +1359,16 @@
         </div>
     </section>
 
-    <!-- ===== ГАЛЕРЕЯ ===== -->
     <section class="section section-alt" id="gallery">
         <div class="container">
             <div class="reveal-up">
                 <h2 class="section-title">Галерея</h2>
                 <p class="section-subtitle">Фотографии «пряничного домика» и его архитектурных деталей</p>
             </div>
-
-            <div class="gallery-grid" id="galleryGrid">
-            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
         </div>
     </section>
 
-    <!-- ===== КОМАНДА ===== -->
     <section class="section" id="team">
         <div class="container">
             <div class="reveal-up">
@@ -1591,7 +1377,6 @@
                     Над проектом работали участники <strong>НЕЙМАРК.ИТ–Академии</strong> по информационному моделированию и цифровым двойникам
                 </p>
             </div>
-
             <div class="team-grid">
                 <div class="team-card reveal-scale">
                     <div class="avatar"><i class="fas fa-user"></i></div>
@@ -1615,7 +1400,6 @@
         </div>
     </section>
 
-    <!-- ===== ПАРТНЁРЫ ===== -->
     <section class="section section-alt" id="partners">
         <div class="container">
             <div class="reveal-up">
@@ -1624,7 +1408,6 @@
                     Компании и организации, которые поддерживают проект
                 </p>
             </div>
-
             <div class="partners-grid">
                 <div class="partner-item reveal-scale">
                     <div class="partner-logo-img">
@@ -1670,7 +1453,6 @@
         </div>
     </section>
 
-    <!-- ===== ЦИТАТА ===== -->
     <section class="section-quote reveal-scale">
         <blockquote>
             Этот «пряничный домик», стоящий в сердце квартала Трёх Святителей, помнит время, когда здесь шумела городская окраина. Он видел смену эпох, пережил пожар и хранит тепло деревянных стен и искусство резчиков.
@@ -1678,7 +1460,6 @@
         <div class="quote-author">— Из истории Нижнего Новгорода</div>
     </section>
 
-    <!-- ===== ФУТЕР ===== -->
     <section class="section-footer">
         <div class="footer-text">
             <i class="fas fa-home"></i> «Пряничный домик» · Дом мещан Мироновых — М. А. Антонова · Нижний Новгород
@@ -1688,11 +1469,6 @@
         </div>
     </section>
 
-    <!-- ============================================================= -->
-    <!-- ===== СКРИПТЫ ===== -->
-    <!-- ============================================================= -->
-
-    <!-- Three.js скрипт с загрузкой текстур -->
     <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -1709,15 +1485,12 @@
             console.log('✅ Контейнер найден');
         }
 
-        // --- 1. СЦЕНА ---
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x0a1a2e);
 
-        // --- 2. КАМЕРА ---
         const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
         camera.position.set(6, 5, 10);
 
-        // --- 3. РЕНДЕРЕР ---
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -1727,7 +1500,6 @@
         renderer.toneMappingExposure = 1.2;
         container.appendChild(renderer.domElement);
 
-        // --- 4. УПРАВЛЕНИЕ ---
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.08;
@@ -1737,7 +1509,6 @@
         controls.target.set(0, 0.5, 0);
         controls.update();
 
-        // --- 5. ОСВЕЩЕНИЕ ---
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
         scene.add(ambientLight);
 
@@ -1760,7 +1531,6 @@
         pointLight.position.set(0, 3, 0);
         scene.add(pointLight);
 
-        // --- 6. ПОЛ ДЛЯ ТЕНЕЙ ---
         const floorGeo = new THREE.PlaneGeometry(8, 8);
         const floorMat = new THREE.ShadowMaterial({ opacity: 0.3, color: 0x000000 });
         const floor = new THREE.Mesh(floorGeo, floorMat);
@@ -1769,7 +1539,6 @@
         floor.receiveShadow = true;
         scene.add(floor);
 
-        // --- 7. ЗАГРУЗКА ТЕКСТУРЫ ---
         const textureLoader = new THREE.TextureLoader();
         let textureLoaded = false;
         let textureMap = null;
@@ -1781,8 +1550,6 @@
                 textureMap = texture;
                 textureLoaded = true;
                 console.log('✅ Текстура 13.jpg загружена');
-
-                // Если модель уже загружена, применяем текстуру
                 if (modelLoaded) {
                     applyTextureToModel(modelObject);
                 }
@@ -1793,7 +1560,6 @@
             }
         );
 
-        // --- 8. ЗАГРУЗКА FBX ---
         console.log('📁 Начинаем загрузку файла 1.fbx...');
 
         const loader = new FBXLoader();
@@ -1803,7 +1569,6 @@
 
         function applyTextureToModel(model) {
             if (!model || !textureMap) return;
-
             model.traverse((child) => {
                 if (child.isMesh) {
                     if (child.material) {
@@ -1840,7 +1605,6 @@
                 console.log('✅ FBX загружен!');
                 modelObject = fbx;
 
-                // --- МАСШТАБИРОВАНИЕ ---
                 const box = new THREE.Box3().setFromObject(fbx);
                 const size = box.getSize(new THREE.Vector3());
                 const maxDim = Math.max(size.x, size.y, size.z);
@@ -1853,7 +1617,6 @@
                     fbx.position.y += 0.5;
                 }
 
-                // --- НАСТРОЙКА МАТЕРИАЛОВ ---
                 fbx.traverse((child) => {
                     if (child.isMesh) {
                         child.castShadow = true;
@@ -1870,7 +1633,6 @@
                     }
                 });
 
-                // Применяем текстуру, если она уже загружена
                 if (textureLoaded && textureMap) {
                     applyTextureToModel(fbx);
                 }
@@ -1881,7 +1643,6 @@
                 if (loadingEl) loadingEl.style.display = 'none';
                 console.log('✅ Модель добавлена в сцену');
 
-                // --- АВТОВРАЩЕНИЕ ---
                 controls.autoRotate = true;
                 controls.autoRotateSpeed = 1.5;
                 let autoRotateEnabled = true;
@@ -1930,7 +1691,6 @@
             }
         );
 
-        // --- 9. АДАПТАЦИЯ РАЗМЕРА ---
         function resizeRenderer() {
             const width = container.clientWidth;
             const height = container.clientHeight;
@@ -1943,7 +1703,6 @@
 
         window.addEventListener('resize', resizeRenderer);
 
-        // --- 10. АНИМАЦИЯ ---
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
@@ -1956,11 +1715,7 @@
         console.log('🚀 Three.js инициализирован');
     </script>
 
-    <!-- Остальные скрипты -->
     <script>
-        // =============================================================
-        // 1. КАРУСЕЛЬ (с учётом .JPG для 5-9)
-        // =============================================================
         (function() {
             const slidesContainer = document.getElementById('aboutCarouselSlides');
             const dotsContainer = document.getElementById('aboutCarouselDots');
@@ -1973,9 +1728,8 @@
                 const slide = document.createElement('div');
                 slide.className = 'about-carousel-slide';
 
-                // Файлы 5-9 имеют расширение .JPG (заглавные)
                 let ext = '.jpg';
-                if (i >= 5 && i <= 9) {
+                if (i >= 3 && i <= 9) {
                     ext = '.JPG';
                 }
 
@@ -2040,9 +1794,6 @@
             startAutoPlay();
         })();
 
-        // =============================================================
-        // 2. ГАЛЕРЕЯ (с учётом .JPG для 5-9)
-        // =============================================================
         (function() {
             const galleryGrid = document.getElementById('galleryGrid');
             const total = 9;
@@ -2064,9 +1815,8 @@
                 item.className = 'gallery-item reveal-scale';
                 item.style.transitionDelay = ((i - 1) * 0.05) + 's';
 
-                // Файлы 5-9 имеют расширение .JPG (заглавные)
                 let ext = '.jpg';
-                if (i >= 5 && i <= 9) {
+                if (i >= 3 && i <= 9) {
                     ext = '.JPG';
                 }
 
@@ -2080,9 +1830,6 @@
             }
         })();
 
-        // =============================================================
-        // 3. АНИМАЦИИ ПРИ СКРОЛЛЕ
-        // =============================================================
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll(
                 '.reveal-up, .reveal-left, .reveal-right, .reveal-scale'
@@ -2102,9 +1849,6 @@
             elements.forEach(el => observer.observe(el));
         });
 
-        // =============================================================
-        // 4. БУРГЕР-МЕНЮ
-        // =============================================================
         const burger = document.getElementById('burger');
         const navLinks = document.getElementById('navLinks');
         const overlay = document.getElementById('overlay');
@@ -2127,9 +1871,6 @@
             });
         });
 
-        // =============================================================
-        // 5. АКТИВНАЯ ССЫЛКА ПРИ СКРОЛЛЕ
-        // =============================================================
         const sections = document.querySelectorAll('section[id]');
         const navLinksAll = document.querySelectorAll('.nav-links a');
 
@@ -2157,6 +1898,5 @@
             }
         });
     </script>
-
 </body>
 </html>
