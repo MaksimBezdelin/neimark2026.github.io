@@ -884,58 +884,68 @@
             letter-spacing: 1px;
             opacity: 0.8;
         }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+
+        /* ===== КОМАНДА ===== */
+        .team-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .team-photo {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(26, 138, 122, 0.12);
+            margin-bottom: 30px;
+        }
+        .team-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .team-photo:hover img {
+            transform: scale(1.02);
+        }
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .member-item {
+            padding: 8px 20px;
+            background: rgba(26, 138, 122, 0.06);
+            border-radius: 50px;
+            border: 1px solid rgba(26, 138, 122, 0.08);
+        }
+        .member-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0a1a2e;
         }
         @media (max-width: 768px) {
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .team-members {
+                gap: 15px;
+            }
+            .member-item {
+                padding: 6px 16px;
+            }
+            .member-name {
+                font-size: 0.9rem;
             }
         }
         @media (max-width: 480px) {
-            .team-grid {
-                grid-template-columns: 1fr;
+            .team-members {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .member-item {
+                width: 100%;
+                max-width: 250px;
             }
         }
-        .team-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
-            transition: 0.4s ease;
-            border: 1px solid rgba(26, 138, 122, 0.05);
-        }
-        .team-card:hover {
-            box-shadow: 0 8px 40px rgba(26, 138, 122, 0.08);
-            transform: translateY(-6px);
-        }
-        .team-card .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #f0f7f5;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: #1a8a7a;
-            opacity: 0.4;
-        }
-        .team-card h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #0a1a2e;
-        }
-        .team-card .team-role {
-            font-size: 0.85rem;
-            color: #2a3a4e;
-            opacity: 0.6;
-            margin-top: 4px;
-        }
+
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -951,7 +961,7 @@
         @media (max-width: 600px) {
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                gap: 12px;
             }
         }
         .partner-item {
@@ -1122,9 +1132,6 @@
             .partners-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
             .history-facts {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1192,9 +1199,6 @@
             .partner-item .partner-logo-img {
                 max-width: 100px;
                 height: 50px;
-            }
-            .team-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1357,29 +1361,30 @@
         </div>
     </section>
 
+    <!-- ===== КОМАНДА ===== -->
     <section class="section" id="team">
         <div class="container">
             <div class="reveal-up">
                 <h2 class="section-title">Команда</h2>
                 <p class="section-subtitle">
-                    Над проектом работали участники <strong>НЕЙМАРК.ИТ–Академии</strong> по информационному моделированию и цифровым двойникам
+                    Проект выполнен участниками <strong>НЕЙМАРК.ИТ–Академии</strong> по информационному моделированию и цифровым двойникам
                 </p>
             </div>
-            <div class="team-grid">
-                <div class="team-card reveal-scale">
-                    <div class="avatar"><i class="fas fa-user"></i></div>
-                    <h4>Никифорова Дарья</h4>
-                    <div class="team-role">Участник проекта</div>
+
+            <div class="team-wrapper">
+                <div class="team-photo reveal-scale">
+                    <img src="14.jpg" alt="Команда проекта" loading="lazy" />
                 </div>
-                <div class="team-card reveal-scale" style="transition-delay: 0.1s;">
-                    <div class="avatar"><i class="fas fa-user"></i></div>
-                    <h4>Безделин Максим</h4>
-                    <div class="team-role">Участник проекта</div>
-                </div>
-                <div class="team-card reveal-scale" style="transition-delay: 0.2s;">
-                    <div class="avatar"><i class="fas fa-user"></i></div>
-                    <h4>Окулич Анна</h4>
-                    <div class="team-role">Участник проекта</div>
+                <div class="team-members reveal-up">
+                    <div class="member-item">
+                        <span class="member-name">Никифорова Дарья</span>
+                    </div>
+                    <div class="member-item">
+                        <span class="member-name">Окулич Анна</span>
+                    </div>
+                    <div class="member-item">
+                        <span class="member-name">Безделин Максим</span>
+                    </div>
                 </div>
             </div>
         </div>
